@@ -20,6 +20,7 @@ def updateCache(file_path: str, products: List[Dict]):
         title = product['title']
         if title in product_dict:
             if product_dict[title]['price'] != product['price']:
+                print("Product cache updated", product['id'], product['title'])
                 product_dict[title] = product
         else:
             product_dict[title] = product

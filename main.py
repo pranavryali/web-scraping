@@ -2,7 +2,7 @@ from fastapi import FastAPI
 import os
 from jsonconvertor.jsonutils import convertListToJson
 from fastapi.responses import FileResponse
-from scrapper.scrapper import Scraper
+from scraper.scraper import Scraper
 from fastapi.responses import Response
 from parserclass.productclass import ProductClass, Title, Image
 
@@ -16,7 +16,7 @@ def favicon():
 
 @app.get("/")
 def baseRoot():
-    return {"message": "Scraper is ready!"}
+    return {"message": "Scraper is ready, hit the /scrape to get the scraped data!"}
 
 @app.get("/scrape")
 async def scrapeDentalProducts(limit: int = 5):
@@ -42,6 +42,6 @@ async def scrapeDentalProducts(limit: int = 5):
         )
     )
     productList = await scrapper.startScrapping(limit)
-    
+    print(f"Scraping completed for {limit} pages.")
     convertListToJson(productList, "product-list.json")
     return {"message": f"Scraping completed for {limit} pages."}
