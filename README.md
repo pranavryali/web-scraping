@@ -47,6 +47,13 @@ To run this project locally, follow these steps:
    Once we get the data for that particular page, we confirm the user that scrapping for that page is done and the number of items we scrapped.
    Then if the user has mentioned the number of pages that needs to be scrapped then we perform the same operation on all the pages and get the data.
    At the end we inform the user that scrapping has been done for all the pages and the products are updated in the local json file
+5. **Run the project**
+
+   To run this project, after you install all the dependencies needed according to the step2 mentioned above, run the below cmd
+
+   ```sh
+   python -m uvicorn main:app --reload
+   ```
 
    
     
