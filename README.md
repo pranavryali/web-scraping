@@ -36,7 +36,7 @@ To run this project locally, follow these steps:
    Here for simplicity we have done all the things locally.
    Once we scrapped the data we save it into the json file and update the user about the scrapping status.
    We have added the cache here, this is used because we dont want to update the json file if the price(one of the value which we are storing in the json) is not updated.
-4 **Process of Scrapping**
+4. **Process of Scrapping**
 
    Once we hit the API (locally)
    ```sh
